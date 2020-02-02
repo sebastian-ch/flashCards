@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flash cards</title>
+
+    <link href="style.css" rel='stylesheet'>
+</head>
+
+<body onload="start()">
+    <h1>German Flash Cards</h1>
+
+
+    <!--  <div id='flashCard'>
+        <div id='flashCard-inner'>
+            <div id='cardFront'></div>
+        </div>
+    </div>
+-->
+
+
+<div id="front" style="display:block" onclick="switcher()">hi</div>
+
+    <div id='wrapper' style="display:none">
+        <div class='grid-container' onclick="switcher()">
+            <div class="box left1">ich</div>
+            <div class="box" id='right1'></div>
+            <div class="box left2">du</div>
+            <div class="box" id='right2'>4</div>
+            <div class="box left3">er/sie/es</div>
+            <div class="box" id='right3'>6</div>
+            <div class="box left4">wir</div>
+            <div class="box" id='right4'>8</div>
+            <div class="box left5">ihr</div>
+            <div class="box" id='right5'>10</div>
+            <div class="box left6">Sie/sie</div>
+            <div class="box" id='right6'>12</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var vocab = {
+            1: {
+                verb: "müssen",
+                ich: "muss",
+                du: "musst",
+                er_sie_es: "muss",
+                wir: "müssen",
+                ihr: "müsst",
+                Sie: "müssen"
+            }
+        }
+
+        function switcher() {
+            var d1 = document.getElementById("wrapper");
+            var d2 = document.getElementById("front");
+
+            if (d1.style.display == "none") {
+                d2.style.display = "none";
+                d1.style.display = "block";
+            } else {
+                d2.style.display = "block";
+                d1.style.display = "none";
+            }
+        }
+
+        function start() {
+
+            document.getElementById("front").innerHTML = vocab[1].verb;
+            document.getElementById("right1").innerHTML = vocab[1].ich;
+            document.getElementById("right2").innerHTML = vocab[1].du;
+            document.getElementById("right3").innerHTML = vocab[1].er_sie_es;
+            document.getElementById("right4").innerHTML = vocab[1].wir;
+            document.getElementById("right5").innerHTML = vocab[1].ihr;
+            document.getElementById("right6").innerHTML = vocab[1].Sie;
+
+            /*
+            for (var x in vocab[1]) {
+                //console.log(Object.keys(vocab[1])[1]) prints key name
+                console.log(vocab[1][);
+                document.getElementsByClassName("right1").innerHTML = vocab[1][1];
+            } */
+
+        }
+    </script>
+
+</body>
+
+</html>
