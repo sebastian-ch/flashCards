@@ -47,6 +47,7 @@
         var randoNumber;
         const lengthOfVocabList = Object.keys(vocab).length;
 
+        //flip card on click
         function switcher() {
             var d1 = document.getElementById("wrapper");
             var d2 = document.getElementById("front");
@@ -54,13 +55,10 @@
             if (d1.style.display == "none") {
                 d1.style.display = "block";
                 d2.style.display = "none";
-                //d2.classList.add("animated", "flipInY");
-
 
             } else {
                 d1.style.display = "none";
                 d2.style.display = "block";
-                //d1.classList.add("animated", "flipInY");
             }
         }
 
@@ -78,8 +76,8 @@
 
         function start(x) {
 
+            //loop this eventually
             document.getElementById("front").innerHTML = vocab[x].verb;
-
             document.getElementById("right1").innerHTML = vocab[x].ich;
             document.getElementById("right2").innerHTML = vocab[x].du;
             document.getElementById("right3").innerHTML = vocab[x].er_sie_es;
@@ -93,6 +91,7 @@
 
             var newRando;
 
+            //make sure to not roll same number in a row
             do {
                 newRando = getRandomNumber(lengthOfVocabList);
             } while (randoNumber === newRando);
