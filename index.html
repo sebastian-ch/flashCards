@@ -17,18 +17,9 @@
 <body onload="getFirstCard()">
     <h1>German Flash Cards</h1>
 
+    <div id="front" class="animated flipInY faster" style="display:block" onclick="switcher()">hi</div>
 
-    <!--  <div id='flashCard'>
-        <div id='flashCard-inner'>
-            <div id='cardFront'></div>
-        </div>
-    </div>
--->
-
-
-    <div id="front" class="animated flipInY fast" style="display:block" onclick="switcher()">hi</div>
-
-    <div id='wrapper' class="animated flipInY fast" style="display:none">
+    <div id='wrapper' class="animated flipInY faster" style="display:none">
         <div class='grid-container' onclick="switcher()">
             <div class="box left1">ich</div>
             <div class="box" id='right1'></div>
@@ -77,16 +68,8 @@
 
         function getFirstCard() {
 
-            // const rangeF = [...Array(Object.keys(vocab).length).keys()];
-            // console.log(rangeF)
-
             randoNumber = getRandomNumber(lengthOfVocabList);
-
-            console.log(randoNumber);
-
             start(randoNumber);
-
-
         }
 
         function start(x) {
@@ -104,18 +87,14 @@
 
         function nextCard() {
 
-            //console.log(randoNumber);
+            var newRando;
 
-            var newRando = getRandomNumber(lengthOfVocabList);
-
-            if (newRando != randoNumber) {
-                start(newRando);
-            } else {
+            do {
                 newRando = getRandomNumber(lengthOfVocabList);
-                start(newRando);
-            }
+            } while (randoNumber === newRando);
 
-
+            randoNumber = newRando;
+            start(randoNumber);
         }
     </script>
 
