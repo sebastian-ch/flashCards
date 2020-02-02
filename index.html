@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
-<body onload="start()">
+<body onload="getFirstCard()">
     <h1>German Flash Cards</h1>
 
 
@@ -24,7 +24,7 @@
 -->
 
 
-<div id="front" class="animated flipInY fast" style="display:block" onclick="switcher()">hi</div>
+    <div id="front" class="animated flipInY fast" style="display:block" onclick="switcher()">hi</div>
 
     <div id='wrapper' class="animated flipInY fast" style="display:none">
         <div class='grid-container' onclick="switcher()">
@@ -41,13 +41,13 @@
             <div class="box left6">Sie/sie</div>
             <div class="box" id='right6'>12</div>
         </div>
-
     </div>
+    <h1 id='next' onclick="nextCard()">Next Card</h1>
 
 
     <script>
         var vocab = {
-            1: {
+            0: {
                 verb: "müssen",
                 ich: "muss",
                 du: "musst",
@@ -55,8 +55,31 @@
                 wir: "müssen",
                 ihr: "müsst",
                 Sie: "müssen"
+            },
+            1: {
+                verb: "haben",
+                ich: "habe",
+                du: "hast",
+                er_sie_es: "hat",
+                wir: "haben",
+                ihr: "habt",
+                Sie: "haben"
+
+            },
+            2: {
+                verb: "können",
+                ich: "kann",
+                du: "kannst",
+                er_sie_es: "kann",
+                wir: "können",
+                ihr: "könnt",
+                Sie: "können"
             }
         }
+
+
+        var randoNumber;
+        const lengthOfVocabList = Object.keys(vocab).length;
 
         function switcher() {
             var d1 = document.getElementById("wrapper");
@@ -66,7 +89,7 @@
                 d1.style.display = "block";
                 d2.style.display = "none";
                 //d2.classList.add("animated", "flipInY");
-                
+
 
             } else {
                 d1.style.display = "none";
@@ -75,26 +98,52 @@
             }
         }
 
-        function start() {
+        function getRandomNumber(maxNum){
 
-            document.getElementById("front").innerHTML = vocab[1].verb;
+            return Math.floor(Math.random() * (maxNum));
+
+        }
+
+        function getFirstCard() {
+
+            // const rangeF = [...Array(Object.keys(vocab).length).keys()];
+            // console.log(rangeF)
+
+            randoNumber = getRandomNumber(lengthOfVocabList);
+
+            console.log(randoNumber);
+
+            start(randoNumber);
 
 
-           // const idNames = ["right1", "right2", "right3", "right4", "right5", "right6"]
+        }
 
-            document.getElementById("right1").innerHTML = vocab[1].ich;
-            document.getElementById("right2").innerHTML = vocab[1].du;
-            document.getElementById("right3").innerHTML = vocab[1].er_sie_es;
-            document.getElementById("right4").innerHTML = vocab[1].wir;
-            document.getElementById("right5").innerHTML = vocab[1].ihr;
-            document.getElementById("right6").innerHTML = vocab[1].Sie;
+        function start(x) {
 
-            /*
-            for (var x in vocab[1]) {
-                //console.log(Object.keys(vocab[1])[1]) prints key name
-                console.log(vocab[1][);
-                document.getElementsByClassName("right1").innerHTML = vocab[1][1];
-            } */
+            document.getElementById("front").innerHTML = vocab[x].verb;
+
+            document.getElementById("right1").innerHTML = vocab[x].ich;
+            document.getElementById("right2").innerHTML = vocab[x].du;
+            document.getElementById("right3").innerHTML = vocab[x].er_sie_es;
+            document.getElementById("right4").innerHTML = vocab[x].wir;
+            document.getElementById("right5").innerHTML = vocab[x].ihr;
+            document.getElementById("right6").innerHTML = vocab[x].Sie;
+
+        }
+
+        function nextCard() {
+
+            //console.log(randoNumber);
+
+            var newRando = getRandomNumber(lengthOfVocabList);
+
+            if (newRando != randoNumber) {
+                start(newRando);
+            } else {
+                newRando = getRandomNumber(lengthOfVocabList);
+                start(newRando);
+            }
+
 
         }
     </script>
