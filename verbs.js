@@ -62,5 +62,15 @@ var vocab = {
         wir: "werden",
         ihr: "werdet",
         Sie: "werden"
+    },
+    7: {
+        verb: "mögen",
+        ich: "mag",
+        du: "magst",
+        er_sie_es: "mag",
+        wir: "mögen",
+        ihr: "mögt",
+        Sie: "mögen"
     }
+   
 }
