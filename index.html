@@ -10,6 +10,8 @@
 
     <link href="style.css" rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="verbs.js"></script>
+
 </head>
 
 <body onload="getFirstCard()">
@@ -46,38 +48,7 @@
 
 
     <script>
-        var vocab = {
-            0: {
-                verb: "müssen",
-                ich: "muss",
-                du: "musst",
-                er_sie_es: "muss",
-                wir: "müssen",
-                ihr: "müsst",
-                Sie: "müssen"
-            },
-            1: {
-                verb: "haben",
-                ich: "habe",
-                du: "hast",
-                er_sie_es: "hat",
-                wir: "haben",
-                ihr: "habt",
-                Sie: "haben"
-
-            },
-            2: {
-                verb: "können",
-                ich: "kann",
-                du: "kannst",
-                er_sie_es: "kann",
-                wir: "können",
-                ihr: "könnt",
-                Sie: "können"
-            }
-        }
-
-
+       
         var randoNumber;
         const lengthOfVocabList = Object.keys(vocab).length;
 
