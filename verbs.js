@@ -53,5 +53,14 @@ var vocab = {
         wir: "dürfen",
         ihr: "dürft",
         Sie: "dürfen"
+    },
+    6: {
+        verb: "werden",
+        ich: "werde",
+        du: "wirst",
+        er_sie_es: "wird",
+        wir: "werden",
+        ihr: "werdet",
+        Sie: "werden"
     }
 }
