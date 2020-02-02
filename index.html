@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://i.imgur.com/u9A1thm.png" />
+    <meta name="twitter:title" content="ich lerne Deutsch" />
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,6 +19,7 @@
 
 <body onload="getFirstCard()">
     <h1>German Flash Cards</h1>
+    <h3>Just tryna learn those verbs</h3>
 
     <div id="front" class="animated flipInY faster" style="display:block" onclick="switcher()">hi</div>
 
@@ -95,6 +99,18 @@
 
             randoNumber = newRando;
             start(randoNumber);
+
+
+            ////animation stuff
+            //if you hit next card while on the back, switch to front
+            var d1 = document.getElementById("wrapper");
+            var d2 = document.getElementById("front");
+
+            if (d2.style.display == "none") {
+                d2.style.display = "block";
+                d1.style.display = "none";
+            }
+
         }
     </script>
 
