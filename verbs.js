@@ -71,6 +71,24 @@ var vocab = {
         wir: "mögen",
         ihr: "mögt",
         Sie: "mögen"
+    },
+    8: {
+        verb: "nehmen",
+        ich: "nehme",
+        du: "nimmst",
+        er_sie_es: "nehmen",
+        wir: "nehmen",
+        ihr: "nehmt",
+        Sie: "nehmen"
+    },
+    9: {
+        verb: "essen",
+        ich: "esse",
+        du: "isst",
+        er_sie_es: "isst",
+        wir: "essen",
+        ihr: "esst",
+        Sie: "essen"
     }
    
 }
