@@ -76,7 +76,7 @@ var vocab = {
         verb: "nehmen",
         ich: "nehme",
         du: "nimmst",
-        er_sie_es: "nehmen",
+        er_sie_es: "nimmt",
         wir: "nehmen",
         ihr: "nehmt",
         Sie: "nehmen"
